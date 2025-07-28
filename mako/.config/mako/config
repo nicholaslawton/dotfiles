@@ -1,2 +1,5 @@
+[urgency=critical]
+layer=top
+
 [app-name="Spotify"]
 default-timeout=5000
