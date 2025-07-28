@@ -1,0 +1,23 @@
+[notifications.critical]
+# Send notification when battery drops to or below 10% while discharging
+threshold = 10
+urgency = "critical"
+title = "Battery Critical"
+body = "Battery at {battery.percentage}%"
+icon = "battery-caution-charging-symbolic" # Or "battery-empty"
+
+[notifications.low]
+# Send notification when battery drops to or below 20% while discharging
+threshold = 20
+urgency = "normal"
+title = "Battery Low"
+body = "Battery at {battery.percentage}%."
+icon = "battery-low-symbolic"
+
+[notifications.full]
+# Send notification when battery reaches 100% while charging
+threshold = 100
+urgency = "low"
+title = "Battery Full"
+body = "Battery at {battery.percentage}%."
+icon = "battery-full-charged-symbolic"
