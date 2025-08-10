@@ -1,3 +1,4 @@
 [default]
 path = "~/images/wallpapers/"
 duration = "1h"
+queue-size = 24
