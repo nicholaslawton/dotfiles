@@ -1,22 +1,21 @@
 # Central theme definition – used by all applications
 
-# The palette section defines the colour palette. Each element can support a gradient between two colours, the primary
-# and secondary. Visual elements may choose to support the gradient colours, or may choose to use only the primary
-# colour as a flat colour. Choosing the same value for both colours of a gradient would produce a flat colour even for
-# visual elements which support a gradient.
+# The palette section defines the colour palette. Each colour consists of a primary and secondary shade. These two
+# shades can be used by visual elements as they choose. For example, one visual element might use them for semantic
+# purposes, such as to distinguish between active and inactive states. Meanwhile, another visual element might form
+# them into a gradient.
 [palette]
 
 # The predominant colour
 # Usage examples: window background
-dominant = { primary = "1a1a1aaa", secondary = "595959aa" }
+dominant = { primary = "333333aa", secondary = "595959aa" }
 
 # A contrast to the dominant colour
 # Usage examples: standard text, rendered on the domainant background to be easily readable
-contrast = { primary = "eeeeeeff", secondary = "eeeeeeff" }
+contrast = { primary = "ddddddff", secondary = "ddddddff" }
 
 # A sequential collection of additional colours which comprise the palette, and provide accents to the visual style.
-accents = [
-    { primary = "33ccffee", secondary = "33ccffee" },
-    { primary = "00ff99ee", secondary = "00ff99ee" },
-    { primary = "ff6b6bee", secondary = "ff6b6bee" }
-] 
+[palette.accents]
+first = { primary = "33ccffee", secondary = "00ff99ee" }
+second = { primary = "ff6b6bee", secondary = "ff6b6bee" }
+third = { primary = "feca57ff", secondary = "feca57ff" }
