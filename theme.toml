@@ -12,7 +12,7 @@ dominant = { primary = "333333aa", secondary = "595959aa" }
 
 # A contrast to the dominant colour
 # Usage examples: standard text, rendered on the domainant background to be easily readable
-contrast = { primary = "ddddddff", secondary = "ddddddff" }
+contrast = { primary = "ddddddff", secondary = "aaaaaaff" }
 
 # A sequential collection of additional colours which comprise the palette, and provide accents to the visual style.
 [palette.accents]
