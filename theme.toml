@@ -1,8 +1,22 @@
 # Central theme definition – used by all applications
 
-[colors]
-# Primary colours
-accent            = "33ccffee"          # used for active borders
-accent_highlight  = "00ff99ee"          # used for active border highlight
-background        = { primary = "1a1a1aaa", secondary = "595959aa" }
-shadow            = "1a1a1aee"
+# The palette section defines the colour palette. Each element can support a gradient between two colours, the primary
+# and secondary. Visual elements may choose to support the gradient colours, or may choose to use only the primary
+# colour as a flat colour. Choosing the same value for both colours of a gradient would produce a flat colour even for
+# visual elements which support a gradient.
+[palette]
+
+# The predominant colour
+# Usage examples: window background
+dominant = { primary = "1a1a1aaa", secondary = "595959aa" }
+
+# A contrast to the dominant colour
+# Usage examples: standard text, rendered on the domainant background to be easily readable
+contrast = { primary = "eeeeeeff", secondary = "eeeeeeff" }
+
+# A sequential collection of additional colours which comprise the palette, and provide accents to the visual style.
+accents = [
+    { primary = "33ccffee", secondary = "33ccffee" },
+    { primary = "00ff99ee", secondary = "00ff99ee" },
+    { primary = "ff6b6bee", secondary = "ff6b6bee" }
+] 
