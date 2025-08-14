@@ -49,4 +49,4 @@ Examples:
 ## Aesthetics
 
 The visual style of all graphical elements should be centrally controlled, using a shared colour palette, to avoid
-copying colour values throughout multiple different configuration files.
+copying colour values and other styling elements throughout multiple different configuration files.

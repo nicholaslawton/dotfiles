@@ -1,0 +1,8 @@
+# Central theme definition – used by all applications
+
+[colors]
+# Primary colours
+accent            = "33ccffee"          # used for active borders
+accent_highlight  = "00ff99ee"          # used for active border highlight
+background        = { primary = "1a1a1aaa", secondary = "595959aa" }
+shadow            = "1a1a1aee"
