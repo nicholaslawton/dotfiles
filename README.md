@@ -48,5 +48,12 @@ Examples:
 
 ## Aesthetics
 
-The visual style of all graphical elements should be centrally controlled, using a shared colour palette, to avoid
-copying colour values and other styling elements throughout multiple different configuration files.
+The visual style of all graphical elements is centrally controlled, using a shared colour palette, to avoid replicating
+colour values and other styling elements throughout multiple different configuration files.
+
+### Styling implementation overview
+
+- The theme is defined in the theme.toml file.
+- Themeable applications reference the definitions from theme.toml in *.tmpl template files, using `gomplate` syntax.
+- The theme-apply.nu script (executable with `nu theme-apply.nu`) applies the theme, using `gomplate` to generate all
+  templated configuration files.
