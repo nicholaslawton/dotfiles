@@ -1,0 +1,91 @@
+configuration {
+  font: "Sans-Serif Medium 12";
+
+  drun {
+    display-name: "";
+  }
+
+  run {
+    display-name: "";
+  }
+
+  window {
+    display-name: "";
+  }
+
+  timeout {
+    delay: 10;
+    action: "kb-cancel";
+  }
+}
+
+* {
+  clear: #ffffff20;
+  frosted: #ffffff30;
+  contrast: #cccccc;
+
+  border: 0;
+}
+
+window {
+  transparency: "real";
+  background-color: @clear;
+}
+
+mainbox {
+  children: [inputbar, listview];
+  padding: 10px;
+  spacing: 10px;
+}
+
+inputbar {
+  background-color: @frosted;
+  text-color: @contrast;
+  children: [prompt, entry];
+}
+
+entry {
+  text-color: @contrast;
+  padding: 12px 3px;
+}
+
+prompt {
+  text-color: @contrast;
+  padding: 12px;
+}
+
+listview {
+  columns: 5;
+  lines: 3;
+  spacing: 10px;
+  border: 0px;
+}
+
+element {
+  orientation: vertical;
+  children: [element-icon, element-text];
+  padding: 10px;
+}
+
+element.normal.normal {
+  background-color: @clear;
+  text-color: @contrast;
+}
+
+element.alternate.normal {
+  background-color: @clear;
+  text-color: @contrast;
+}
+
+element.selected.normal {
+    background-color: @frosted;
+    text-color: @contrast;
+}
+
+element-icon {
+  size: 64px;
+}
+
+element-text {
+  horizontal-align: 0.5;
+}
