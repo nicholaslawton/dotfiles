@@ -21,16 +21,17 @@ configuration {
 
 * {
   clear: #00000000;
-  glass: #ffffff40;
-  tint: #00000040;
-  heavy-tint: #000000a0;
+  frosted: #ffffffa0;
+  tint-light: #00000020;
+  tint-medium: #00000040;
+  tint-heavy: #000000a0;
 }
 
 window {
   transparency: "real";
-  background-color: @glass;
+  background-color: @frosted;
   border: 1px;
-  border-color: @tint;
+  border-color: @tint-light;
   border-radius: 10px;
 }
 
@@ -41,19 +42,19 @@ mainbox {
 }
 
 inputbar {
-  background-color: @tint;
-  text-color: @heavy-tint;
+  background-color: @tint-light;
+  text-color: @tint-heavy;
   children: [prompt, entry];
 }
 
 entry {
-  text-color: @heavy-tint;
-  placeholder-color: @tint;
+  text-color: @tint-heavy;
+  placeholder-color: @tint-medium;
   padding: 12px 3px;
 }
 
 prompt {
-  text-color: @heavy-tint;
+  text-color: @tint-heavy;
   padding: 12px;
 }
 
@@ -73,17 +74,17 @@ element {
 
 element.normal.normal {
   background-color: @clear;
-  text-color: @heavy-tint;
+  text-color: @tint-heavy;
 }
 
 element.alternate.normal {
   background-color: @clear;
-  text-color: @heavy-tint;
+  text-color: @tint-heavy;
 }
 
 element.selected.normal {
-  background-color: @tint;
-  text-color: @heavy-tint;
+  background-color: @tint-light;
+  text-color: @tint-heavy;
 }
 
 element-icon {
