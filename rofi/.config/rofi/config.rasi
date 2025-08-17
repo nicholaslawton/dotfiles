@@ -31,6 +31,7 @@ window {
   background-color: @glass;
   border: 1px;
   border-color: @tint;
+  border-radius: 10px;
 }
 
 mainbox {
