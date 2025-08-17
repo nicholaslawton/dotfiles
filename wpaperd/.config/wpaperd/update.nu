@@ -1,19 +1,13 @@
-def main [] {
-  let queueSize: int = open config.toml | get default.queue-size
-  cd ~/images/wallpapers
-  fetch-new
-  print $"(count-all) of ($queueSize)"
-  remove-all-but-most-recent $queueSize
-}
+let config = open ~/.config/wpaperd/config.toml
+let dir = $config.default.path | path expand
+let num = $config.default.queue-size
 
-def fetch-new [] {
-  wallpaper-binge
-}
+print $"Downloading wallpaper to ($dir)"
+wallpaper-binge -o $dir
 
-def count-all [] {
-  ls | length
-}
+let wallpapers = ls $dir | where type == file
+print $"($wallpapers | length) of ($num) wallpapers"
 
-def remove-all-but-most-recent [n: int] {
-  ls | sort-by modified | reverse | skip $n | each { rm $in.name } | ignore  
-}
+let removals = $wallpapers | sort-by modified | reverse | skip $num
+print $"Removing ($removals | length) wallpapers"
+$removals | each { rm $in.name; $in }
