@@ -1,0 +1,48 @@
+* {
+    font-family: "Sans-Serif", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent dark background */
+    border-radius: 10px; /* Rounded corners for the bar */
+    color: #ffffff;
+    margin: 5px; /* Small margin around the bar */
+}
+
+#workspaces button {
+    padding: 0 8px;
+    background-color: transparent;
+    color: #ffffff;
+    border-radius: 5px; /* Slightly rounded workspace buttons */
+}
+
+#workspaces button.active {
+    background-color: rgba(255, 255, 255, 0.2); /* Highlight active workspace */
+}
+
+#workspaces button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#pulseaudio,
+#network,
+#battery,
+#clock {
+    padding: 0 10px;
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle background for modules */
+    border-radius: 5px; /* Rounded module backgrounds */
+    margin: 0 2px; /* Small spacing between modules */
+}
+
+#pulseaudio.muted {
+    background-color: rgba(255, 0, 0, 0.3); /* Red tint for muted volume */
+}
+
+#battery.charging, #battery.plugged {
+    background-color: rgba(0, 255, 0, 0.3); /* Green tint for charging */
+}
+
+#battery.critical {
+    background-color: rgba(255, 0, 0, 0.5); /* Red tint for critical battery */
+}
