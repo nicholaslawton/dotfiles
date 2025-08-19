@@ -35,7 +35,7 @@
     "pulseaudio": {
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon}",
-        "format-muted": "",
+        "format-muted": "",
         "format-icons": {
             "default": ["", "", ""]
         },
@@ -44,7 +44,7 @@
 
     "network": {
         "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr} ",
+        "format-ethernet": "{ipaddr} ",
         "format-disconnected": "Disconnected ⚠"
     },
 
@@ -54,13 +54,13 @@
             "critical": 15
         },
         "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
+        "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-icons": ["", "", "", "", ""]
     },
 
     "clock": {
-        "format": "{:%H:%M}",
+        "format": "{:%I:%M %p}",
         "tooltip-format": "<big>{:%Y %B %d}</big>\n<tt><small>{calendar}</small></tt>"
     }
 }
