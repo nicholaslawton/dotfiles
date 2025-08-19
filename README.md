@@ -48,10 +48,22 @@ Examples:
 
 ## Aesthetics
 
-The visual style of all graphical elements is centrally controlled, using a shared colour palette, to avoid replicating
-colour values and other styling elements throughout multiple different configuration files.
+### Miniamlist
+
+Less is more. Minimalism is the key aesthetic principle. This manifests in a variety of ways.
+
+- Keep the colour palette small.
+- Avoid visual clutter and information overload
+- Only the most important details should be constantly visible, such as the clock and battery status.
+- Details which are not constantly important (such as CPU usage) should not be constantly displayed. Instead, they
+  could be available through a click or hover, or hidden in some other way, perhaps in the background behind all the
+  windows. In some cases, they may not need to be presented at all, especially if there is an easy method for querying
+  the information through the terminal.
 
 ### Styling implementation overview
+
+The visual style of all graphical elements is centrally controlled, using a shared colour palette, to avoid replicating
+colour values and other styling elements throughout multiple different configuration files.
 
 - The theme is defined in the theme.toml file.
 - Themeable applications reference the definitions from theme.toml in *.tmpl template files, using `gomplate` syntax.
