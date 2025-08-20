@@ -29,9 +29,8 @@ window#waybar {
 #network,
 #battery,
 #clock {
-    padding: 0 10px;
-    background-color: rgba(255, 255, 255, 0.1); /* Subtle background for modules */
-    border-radius: 5px; /* Rounded module backgrounds */
+    padding: 10px;
+    background-color: transparent;
     margin: 0 2px; /* Small spacing between modules */
 }
 
