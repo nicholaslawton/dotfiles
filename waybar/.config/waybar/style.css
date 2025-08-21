@@ -4,44 +4,35 @@
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent dark background */
-    border-radius: 10px; /* Rounded corners for the bar */
-    color: #ffffff;
-    margin: 5px; /* Small margin around the bar */
+    background-color: rgba(255, 255, 255, 0.4);
+    color: rgba(0, 0, 0, 0.9);
 }
 
 #workspaces button {
-    padding: 0 8px;
-    background-color: transparent;
-    color: #ffffff;
-    border-radius: 5px; /* Slightly rounded workspace buttons */
+    padding: 0 12px 0 8px;
+    border-radius: 0;
 }
 
 #workspaces button.active {
-    background-color: rgba(255, 255, 255, 0.2); /* Highlight active workspace */
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
-#workspaces button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+#workspaces button.hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
-#pulseaudio,
-#network,
-#battery,
-#clock {
-    padding: 10px;
-    background-color: transparent;
-    margin: 0 2px; /* Small spacing between modules */
+#pulseaudio, #network, #battery, #clock {
+    padding: 0 14px 0 8px;
 }
 
 #pulseaudio.muted {
-    background-color: rgba(255, 0, 0, 0.3); /* Red tint for muted volume */
+    background-color: rgba(255, 0, 0, 0.2); /* Red tint for muted volume */
 }
 
 #battery.charging, #battery.plugged {
-    background-color: rgba(0, 255, 0, 0.3); /* Green tint for charging */
+    background-color: rgba(0, 255, 0, 0.2); /* Green tint for charging */
 }
 
 #battery.critical {
-    background-color: rgba(255, 0, 0, 0.5); /* Red tint for critical battery */
+    background-color: rgba(255, 0, 0, 0.2); /* Red tint for critical battery */
 }
