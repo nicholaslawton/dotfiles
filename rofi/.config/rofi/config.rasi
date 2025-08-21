@@ -1,5 +1,5 @@
 configuration {
-  font: "Sans-Serif Medium 12";
+  font: "Sans-Serif Regular 12";
 
   drun {
     display-name: "";
@@ -20,18 +20,18 @@ configuration {
 }
 
 * {
-  clear: #00000000;
-  frosted: #ffffffa0;
-  tint-light: #00000020;
-  tint-medium: #00000040;
-  tint-heavy: #000000a0;
+  clear: rgba(0, 0, 0, 0);
+  frosted: rgba(0, 0, 0, 0.4);
+  tint-light: rgba(255, 255, 255, 0.2);
+  tint-medium: rgba(255, 255, 255, 0.4);
+  tint-heavy: rgba(255, 255, 255, 0.9);
 }
 
 window {
   transparency: "real";
   background-color: @frosted;
   border: 1px;
-  border-color: @tint-light;
+  border-color: @tint-medium;
   border-radius: 10px;
 }
 
