@@ -7,9 +7,6 @@
     "modules-left": [
         "hyprland/workspaces"
     ],
-    "modules-center": [
-        "hyprland/window"
-    ],
     "modules-right": [
         "network",
         "pulseaudio",
@@ -39,7 +36,6 @@
         "format-icons": {
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
     },
 
     "network": {
