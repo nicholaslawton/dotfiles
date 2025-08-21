@@ -9,12 +9,18 @@ window#waybar {
 }
 
 #workspaces button {
-    padding: 0 12px 0 8px;
-    border-radius: 0;
+    padding: 0 2px;
+    margin: 5px;
+    min-height: 0px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-color: rgba(0, 0, 0, 0.9);
 }
 
 #workspaces button.active {
-    background-color: rgba(0, 0, 0, 0.2);
+    padding: 0 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-color: rgba(0, 0, 0, 0.9);
 }
 
 #pulseaudio, #network, #battery, #clock {
