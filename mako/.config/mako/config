@@ -1,5 +1,13 @@
+default-timeout=5000
+font=sans-serif 10
+background-color=#000000aa
+text-color=#ffffffdd
+border-size=1
+border-color=#ffffff33
+padding=10
+margin=10
+border-radius=5
+
 [urgency=critical]
 layer=top
-
-[app-name="Spotify"]
-default-timeout=5000
+default-timeout=0
