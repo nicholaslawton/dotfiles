@@ -16,6 +16,6 @@ contrast = { primary = "dddddd", secondary = "aaaaaa" }
 
 # A sequential collection of additional colours which comprise the palette, and provide accents to the visual style.
 [palette.accents]
-first = { primary = "33ccff", secondary = "224488" }
+first = { primary = "33ccff", secondary = "007AA3" }
 second = { primary = "00ff99", secondary = "00ff99" }
 third = { primary = "feca57", secondary = "feca57" }
