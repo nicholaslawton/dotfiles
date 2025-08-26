@@ -8,14 +8,14 @@
 
 # The predominant colour
 # Usage examples: window background
-dominant = { primary = "333333aa", secondary = "595959aa" }
+dominant = { primary = "333333", secondary = "595959" }
 
 # A contrast to the dominant colour
 # Usage examples: standard text, rendered on the domainant background to be easily readable
-contrast = { primary = "ddddddff", secondary = "aaaaaaff" }
+contrast = { primary = "dddddd", secondary = "aaaaaa" }
 
 # A sequential collection of additional colours which comprise the palette, and provide accents to the visual style.
 [palette.accents]
-first = { primary = "33ccffee", secondary = "00ff99ee" }
-second = { primary = "ff6b6bee", secondary = "ff6b6bee" }
-third = { primary = "feca57ff", secondary = "feca57ff" }
+first = { primary = "33ccff", secondary = "224488" }
+second = { primary = "00ff99", secondary = "00ff99" }
+third = { primary = "feca57", secondary = "feca57" }
