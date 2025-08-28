@@ -3,10 +3,10 @@ $env.PROMPT_INDICATOR_VI_NORMAL = '❯ '
 $env.PROMPT_COMMAND_RIGHT = {|| date now | format date '%d %b, %H:%M:%S' }
 
 $env.TRANSIENT_PROMPT_COMMAND = {||
-  [ (ansi { fg: '#ffffff', bg: '#007AA3' })
+  [ (ansi { fg: '#ffffff', bg: '#{{ .palette.accents.first.secondary }}' })
     (pwd | str replace --regex $'^($env.HOME)' '~' | fill --width 40 --alignment l)
     (ansi reset)
-    (ansi { fg: '#007AA3' })
+    (ansi { fg: '#{{ .palette.accents.first.secondary }}' })
     ""
     (ansi reset)
     "\n" ]
