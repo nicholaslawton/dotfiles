@@ -38,6 +38,11 @@ $menu = rofi -show drun
 exec-once = wpaperd -d
 exec-once = waybar
 exec-once = nu ~/.config/wpaperd/update.nu
+exec-once = swayidle -w \
+    timeout 300 'hyprlock' \
+    timeout 330 'hyprctl dispatch dpms off' \
+    resume 'hyprctl dispatch dpms on' \
+    before-sleep 'hyprlock'
 
 #############################
 ### ENVIRONMENT VARIABLES ###
