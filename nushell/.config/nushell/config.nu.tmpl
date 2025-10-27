@@ -1,5 +1,5 @@
-$env.PROMPT_INDICATOR = '❯ '
-$env.PROMPT_INDICATOR_VI_NORMAL = '❯ '
+$env.PROMPT_INDICATOR = (glyph_fallback "❯ " "> ")
+$env.PROMPT_INDICATOR_VI_NORMAL = (glyph_fallback "❯ " "> ")
 $env.PROMPT_COMMAND_RIGHT = {|| date now | format date '%d %b, %H:%M:%S' }
 
 $env.TRANSIENT_PROMPT_COMMAND = {||
@@ -7,8 +7,18 @@ $env.TRANSIENT_PROMPT_COMMAND = {||
     (pwd | str replace --regex $'^($env.HOME)' '~' | fill --width 40 --alignment l)
     (ansi reset)
     (ansi { fg: '#{{ .palette.accents.first.secondary }}' })
-    ""
+    (glyph_fallback "" "")
     (ansi reset)
     "\n" ]
   | str join
+}
+
+# Function to choose a string based on TTY status
+def glyph_fallback [glyph: string, fallback: string] {
+    let current_tty = (tty)
+    if ($current_tty =~ "/dev/tty[0-9]+") {
+        $fallback
+    } else {
+        $glyph
+    }
 }
