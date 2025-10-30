@@ -6,7 +6,7 @@ vt = 1
 # The default session, also known as the greeter.
 [default_session]
 
-command = "hyprland --config /etc/greetd/hyprland.conf"
+command = "tuigreet --cmd hyprland --remember --time --asterisks --window-padding 2 --container-padding 2 --theme 'border=cyan;text=white;prompt=gray;time=gray;action=gray;button=cyan;container=black;input=white'"
 
 # The user to run the command as. The privileges this user must have depends
 # on the greeter. A graphical greeter may for example require the user to be
