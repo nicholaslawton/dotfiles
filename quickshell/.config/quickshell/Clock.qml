@@ -6,8 +6,10 @@ import QtQuick.Layouts
 
 Scope {
   readonly property string date: Qt.formatDateTime(clock.date, "dddd d MMMM")
-  readonly property string timeAmpm: Qt.formatDateTime(clock.date, "h:mm a")
-  readonly property string time: timeAmpm.substring(0, timeAmpm.length - 3)
+  readonly property string time: {
+    var timeAmpm = Qt.formatDateTime(clock.date, "h:mma")
+    timeAmpm.substring(0, timeAmpm.length - 2)
+  }
   readonly property string ampm: Qt.formatDateTime(clock.date, "a")
 
   SystemClock {
