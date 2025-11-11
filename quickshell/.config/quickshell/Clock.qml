@@ -1,5 +1,6 @@
 import Quickshell
 import Quickshell.Wayland
+import Quickshell.Widgets
 import QtQuick
 import QtQuick.Layouts
 
@@ -27,12 +28,11 @@ Scope {
       }
 
       margins {
+        top: 50
         bottom: 50
+        left: 50
         right: 50
       }
-
-      implicitWidth: content.width
-      implicitHeight: content.height
 
       color: "transparent"
 
@@ -41,33 +41,43 @@ Scope {
 
       WlrLayershell.layer: WlrLayer.Background
 
-      Item {
-        id: content
-        anchors.fill: parent
+      implicitWidth: content.implicitWidth
+      implicitHeight: content.implicitHeight
 
-        Text {
-          id: timeDisplay
-          text: time
-          color: "white"
-          font.pointSize: 160
-          anchors.baseline: ampmDisplay.baseline
-          anchors.right: ampmDisplay.left
-        }
-        Text {
-          id: ampmDisplay
-          text: ampm
-          color: "white"
-          font.pointSize: 40
-          anchors.bottom: dateDisplay.top
-          anchors.right: dateDisplay.right
-        }
-        Text {
-          id: dateDisplay
-          text: date
-          color: "white"
-          font.pointSize: 40
-          anchors.bottom: parent.bottom
-          anchors.right: parent.right
+      WrapperRectangle {
+        id: content
+        color: "#00000000"
+        margin: 20
+
+        Item {
+          implicitHeight: 250
+          implicitWidth: Math.max(timeDisplay.implicitWidth + ampmDisplay.implicitWidth, dateDisplay.implicitWidth)
+          opacity: 0.7
+
+          Text {
+            id: timeDisplay
+            text: time
+            color: "white"
+            font.pointSize: 160
+            anchors.baseline: ampmDisplay.baseline
+            anchors.right: ampmDisplay.left
+          }
+          Text {
+            id: ampmDisplay
+            text: ampm
+            color: "white"
+            font.pointSize: 40
+            anchors.bottom: dateDisplay.top
+            anchors.right: dateDisplay.right
+          }
+          Text {
+            id: dateDisplay
+            text: date
+            color: "white"
+            font.pointSize: 40
+            anchors.bottom: parent.bottom
+            anchors.right: parent.right
+          }
         }
       }
     }
