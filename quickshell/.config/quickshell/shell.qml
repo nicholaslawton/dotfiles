@@ -1,5 +1,12 @@
 import Quickshell
 
 Scope {
-  Clock {}
+  Variants {
+    model: Quickshell.screens
+
+    Clock {
+      required property var modelData
+      screen: modelData
+    }
+  }
 }
