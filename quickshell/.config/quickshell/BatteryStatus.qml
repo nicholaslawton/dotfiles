@@ -1,70 +1,52 @@
 import QtQuick
 import QtQuick.Layouts
-import Quickshell
-import Quickshell.Io
+import Quickshell.Services.UPower
 
-Item {
+RowLayout {
   id: root
-  property int percentage: 0
-  property bool charging: false
-
-  Timer {
-    id: batteryUpdateTimer
-    interval: 1000 // Update every second
-    running: true
-    repeat: true
-    onTriggered: batteryProcess.running = true
-  }
-
-  Process {
-    id: batteryProcess
-    command: ["nu", "~/.config/quickshell/battery.nu"]
-    running: true
-
-    stdout: StdioCollector {
-      onStreamFinished: {
-        const tokens = this.text.split(" ")
-        root.percentage = parseInt(tokens[0])
-        root.charging = tokens[1] == "charging"
+  property UPowerDevice battery: {
+      for (var i = 0; i < UPower.devices.values.length; i++) {
+        if (UPower.devices.values[i].type == UPowerDeviceType.Battery) {
+          return UPower.devices.values[i]
+        }
       }
     }
-  }
+  property real percentage: battery.percentage
+  property bool charging: battery.state == UPowerDeviceState.Charging
 
-  readonly property string chargeColor: charging ? "lightgreen" : (percentage < 15) ? "tomato" : "white"
+  readonly property string chargeColor: charging ? "lightgreen" : (percentage < 0.15) ? "tomato" : "white"
   readonly property string chargeSymbol: {
       if (charging) {
         return ""
-      } else if (percentage < 10) {
+      } else if (percentage < 0.10) {
         return ""
-      } else if (percentage < 35) {
+      } else if (percentage < 0.35) {
         return ""
-      } else if (percentage < 65) {
+      } else if (percentage < 0.65) {
         return ""
-      } else if (percentage < 90) {
+      } else if (percentage < 0.90) {
         return ""
       } else {
         return ""
       }
     }
 
-  RowLayout {
-    Text {
-      text: chargeSymbol
-      color: chargeColor
-      font.pointSize: 80
-    }
-    Text {
-      id: percentageDisplay
-      text: percentage
-      color: chargeColor
-      font.pointSize: 30
-      font.bold: true
-    }
-    Text {
-      text: "%"
-      color: chargeColor
-      font.pointSize: 20
-      anchors.baseline: percentageDisplay.baseline
-    }
+  Text {
+    text: chargeSymbol
+    color: chargeColor
+    font.pointSize: 80
+  }
+  Text {
+    id: percentageDisplay
+    text: percentage * 100
+    color: chargeColor
+    font.pointSize: 30
+    font.bold: true
+  }
+  Text {
+    text: "%"
+    color: chargeColor
+    font.pointSize: 20
+    anchors.baseline: percentageDisplay.baseline
   }
 }
