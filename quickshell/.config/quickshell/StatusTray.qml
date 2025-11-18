@@ -1,5 +1,6 @@
-import Quickshell
 import QtQuick
+import QtQuick.Layouts
+import Quickshell
 
 Scope {
   Panel {
@@ -7,13 +8,11 @@ Scope {
     anchorLeft: true
 
     Item {
-      implicitHeight: 250
-      implicitWidth: 250
+      implicitHeight: 150
+      implicitWidth: 400
 
-      Text {
-        text: "XXX"
-        color: "white"
-        font.pointSize: 80
+      ColumnLayout {
+        BatteryStatus {}
       }
     }
   }
