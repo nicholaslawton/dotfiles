@@ -40,13 +40,14 @@ RowLayout {
     id: percentageDisplay
     text: percentage * 100
     color: chargeColor
-    font.pointSize: 30
+    font.pointSize: 40
     font.bold: true
+    Layout.alignment: Qt.AlignBaseline
   }
   Text {
     text: "%"
     color: chargeColor
     font.pointSize: 20
-    anchors.baseline: percentageDisplay.baseline
+    Layout.alignment: Qt.AlignBaseline
   }
 }
