@@ -38,7 +38,7 @@ RowLayout {
   }
   Text {
     id: percentageDisplay
-    text: percentage * 100
+    text: Math.round(percentage * 100)
     color: chargeColor
     font.pointSize: 40
     font.bold: true
