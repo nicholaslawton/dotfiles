@@ -8,10 +8,12 @@ Scope {
     anchorLeft: true
 
     Item {
-      implicitHeight: 150
-      implicitWidth: 400
+      implicitHeight: items.height
+      implicitWidth: items.width
 
       ColumnLayout {
+        id: items
+        // NetworkStatus {}
         BatteryStatus {}
       }
     }
