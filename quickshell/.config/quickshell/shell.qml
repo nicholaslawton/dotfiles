@@ -1,6 +1,6 @@
 import Quickshell
 
 Scope {
-  StatusTray {}
-  Clock {}
+  Dashboard {}
+  VolumeOverlay {}
 }
