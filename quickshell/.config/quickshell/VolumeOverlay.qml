@@ -15,12 +15,22 @@ Scope {
   Connections {
     target: Pipewire.defaultAudioSink?.audio
 
+    function showOverlay() {
+      root.showOverlay = true
+      hideTimer.restart()
+    }
+
     function onVolumeChanged() {
-      root.showOverlay = true;
-      hideTimer.restart();
+      showOverlay()
+    }
+
+    function onMutedChanged() {
+      showOverlay()
     }
   }
 
+  readonly property real volume: Pipewire.defaultAudioSink?.audio.volume ?? 0
+  readonly property bool muted: Pipewire.defaultAudioSink?.audio.muted
   property bool showOverlay: false
 
   Timer {
@@ -62,9 +72,25 @@ Scope {
             rightMargin: 15
           }
 
-          IconImage {
-            implicitSize: 30
-            source: Quickshell.iconPath("audio-volume-high-symbolic")
+          // IconImage {
+          //   implicitSize: 30
+          //   source: Quickshell.iconPath("audio-volume-high-symbolic")
+          // }
+
+          Text {
+            text: {
+              if (muted) {
+                return ""
+              } else if (volume > 0.7) {
+                return ""
+              } else if (volume > 0.3) {
+                return ""
+              } else {
+                return ""
+              }
+            }
+            color: muted ? "tomato" : "white"
+            font.pointSize: 16
           }
 
           Rectangle {
@@ -82,8 +108,9 @@ Scope {
                 bottom: parent.bottom
               }
 
-              implicitWidth: parent.width * (Pipewire.defaultAudioSink?.audio.volume ?? 0)
+              implicitWidth: parent.width * volume
               radius: parent.radius
+              color: muted ? "#80ffffff" : "white"
             }
           }
         }
