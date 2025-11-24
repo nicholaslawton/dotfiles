@@ -13,6 +13,7 @@ Scope {
 
       ColumnLayout {
         id: items
+        PackageUpdateStatus {}
         // NetworkStatus {}
         BatteryStatus {}
       }
