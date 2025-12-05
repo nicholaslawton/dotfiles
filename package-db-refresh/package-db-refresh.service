@@ -5,8 +5,10 @@ After=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/pacman -Syy --noconfirm
+ExecStart=/usr/bin/pacman -Syy --noconfirm --quiet
 User=root
+StandardOutput=null
+StandardError=null
 
 [Install]
 WantedBy=multi-user.target
